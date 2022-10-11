@@ -1,29 +1,54 @@
+import java.util.Scanner; //import the Scanner class
+
 public class Main{
     public static void main(String[] args){ 
-        String[] menu = {"0: Frogger", "1: Pong", "2: Tic Tac Toe", "Q: Quit"}; //menu array for user selection
+        String[] menu = {"0: Frogger", "1: Pong", "2: Tic Tac Toe", "3: Quit"}; //menu array for user selection
         System.out.println(menu[0]);
         System.out.println(menu[1]);
         System.out.println(menu[2]);
         System.out.println(menu[3]);//prints menu
-        System.out.println("Select your option: ");
+        
         
         Scanner scanner = new Scanner(System.in); //scan for user input
+        System.out.println("Select your option: ");
 
-        if(choice.equals("0")){
+        String user_input = scanner.nextLine(); //read user input
+
+        if String(user_input == "0"){
             System.out.println("Loading Frogger...");
             //forward user to frogger
-        } else if (choice.equals("1")) {
+           
+        } 
+        else if String(user_input == "1") {
             System.out.println("Loading Pong...");
             //forward user to pong
-        } else if (choice.equals("2")) {
+            
+        } 
+        else if String(user_input == "2") {
             System.out.println("Loading Tic Tac Toe...");
             //forward user to tictactoe
-        } else if (choice.equalsIgnoreCase("q")) {
+            
+        } 
+        else if String(user_input == "3") {
             System.out.println("Goodbye!");
-        System.exit(0);
+            System.exit(0);
         //exits
         }
 
+    }
+    
+
+
+    static void Frogger() {
+
+    }
+
+    public class TicTacToe{
+
+    }
+
+    public class Pong{
+        
     }
 }
 

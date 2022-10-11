@@ -14,22 +14,22 @@ public class Main{
 
         String user_input = scanner.nextLine(); //read user input
 
-        if String(user_input == "0"){
+        if (user_input == "0"){
             System.out.println("Loading Frogger...");
             //forward user to frogger
            
         } 
-        else if String(user_input == "1") {
+        else if (user_input == "1") {
             System.out.println("Loading Pong...");
             //forward user to pong
             
         } 
-        else if String(user_input == "2") {
+        else if (user_input == "2") {
             System.out.println("Loading Tic Tac Toe...");
             //forward user to tictactoe
             
         } 
-        else if String(user_input == "3") {
+        else if (user_input == "3") {
             System.out.println("Goodbye!");
             System.exit(0);
         //exits

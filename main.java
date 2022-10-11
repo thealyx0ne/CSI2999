@@ -1,3 +1,4 @@
+
 import java.util.Scanner; //import the Scanner class
 
 public class Main{
@@ -10,36 +11,39 @@ public class Main{
         
         
         Scanner scanner = new Scanner(System.in); //scan for user input
-        System.out.println("Select your option: ");
+        System.out.println("Select a menu option: ");
 
-        String user_input = scanner.nextLine(); //read user input
+        int user_input = scanner.nextInt(); //read user input
 
-        if (user_input == "0"){
+        if (user_input == 0){
             System.out.println("Loading Frogger...");
             //forward user to frogger
            
         } 
-        else if (user_input == "1") {
+        else if (user_input == 1) {
             System.out.println("Loading Pong...");
             //forward user to pong
             
         } 
-        else if (user_input == "2") {
+        else if (user_input == 2) {
             System.out.println("Loading Tic Tac Toe...");
             //forward user to tictactoe
             
         } 
-        else if (user_input == "3") {
+        else if (user_input == 3) {
             System.out.println("Goodbye!");
             System.exit(0);
         //exits
+        }
+        else {
+            System.out.println("Invalid input. Please select a value 0-3.");
         }
 
     }
     
 
 
-    static void Frogger() {
+    public class Frogger() {
 
     }
 
@@ -52,4 +56,4 @@ public class Main{
     }
 }
 
-//based on menu select, menu will refence correct file and run that code
+# based on menu select, menu will refence correct file and run that code

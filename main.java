@@ -65,7 +65,15 @@ public class Main{
 
     public class Pong {
         //all the workin bits
-        
+        private class paddle1 {
+
+        }
+        private class paddle2 {
+
+        }
+        private class ball {
+            
+        }
     }
 }
 

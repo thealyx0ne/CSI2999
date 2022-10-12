@@ -1,5 +1,6 @@
 
 import java.util.Scanner; //import the Scanner class
+import java.fx; //imports UI for games
 
 public class Main{
     public static void main(String[] args){ 
@@ -9,12 +10,15 @@ public class Main{
         System.out.println(menu[2]);
         System.out.println(menu[3]);//prints menu
         
-        
-        Scanner scanner = new Scanner(System.in); //scan for user input
+        //scan for user input
+        Scanner scanner = new Scanner(System.in); 
         System.out.println("Select a menu option: ");
 
-        int user_input = scanner.nextInt(); //read user input
+        //read user input
+        int user_input = scanner.nextInt();
 
+        //if else statement for menu input
+        //make a while loop??????
         if (user_input == 0){
             System.out.println("Loading Frogger...");
             //forward user to frogger
@@ -35,7 +39,13 @@ public class Main{
             System.exit(0);
         //exits
         }
+        else if (user_input != type.int){
+            // throw exception for wrong input type
+            // if user enters a non-int for menu choice
+            System.out.println("Invalid input. Please select a value 0-3.");
+        }
         else {
+            //exception for if user enters a number < 3
             System.out.println("Invalid input. Please select a value 0-3.");
         }
 
@@ -43,17 +53,20 @@ public class Main{
     
 
 
-    public class Frogger() {
+    public class Frogger {
+        //all the workin bits
 
     }
 
-    public class TicTacToe{
+    public class TicTacToe {
+        //all the workin bits
 
     }
 
-    public class Pong{
+    public class Pong {
+        //all the workin bits
         
     }
 }
 
-# based on menu select, menu will refence correct file and run that code
+//based on menu select, menu will reference correct game and run the code

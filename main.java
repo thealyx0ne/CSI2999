@@ -2,7 +2,7 @@
 import java.util.Scanner; //import the Scanner class
 import java.fx; //imports UI for games
 
-public class Main{
+public class Main {
     public static void main(String[] args){ 
         String[] menu = {"0: Frogger", "1: Pong", "2: Tic Tac Toe", "3: Quit"}; //menu array for user selection
         System.out.println(menu[0]);
@@ -50,31 +50,6 @@ public class Main{
         }
 
     }
-    
-
-
-    public class Frogger {
-        //all the workin bits
-
-    }
-
-    public class TicTacToe {
-        //all the workin bits
-
-    }
-
-    public class Pong {
-        //all the workin bits
-        private class paddle1 {
-
-        }
-        private class paddle2 {
-
-        }
-        private class ball {
-            
-        }
-    }
-}
+ 
 
 //based on menu select, menu will reference correct game and run the code

@@ -1,6 +1,8 @@
-#open gui from menu select
+//open gui from menu select
+import java.util.Scanner;
+import java.fx;
 
-public class Frogger{
+public class Frogger {
 
     final static private int animFrames = 4; // 32/4 = 8, 8 animation frames, 10 ms each
 

@@ -1,6 +1,8 @@
-#open gui from menu select
+//open gui from menu select
+import java.util.Scanner;
+import java.fx;
 
-public class TicTacToe{
+public class TicTacToe {
     public String x = "x";
     public String o = "o";
     public int turn = 0;

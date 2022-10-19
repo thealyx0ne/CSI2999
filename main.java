@@ -1,6 +1,6 @@
 
 import java.util.Scanner; //import the Scanner class
-import java.fx; //imports UI for games
+//import javafx; //imports UI for games
 
 public class Main {
     public static void main(String[] args){ 
@@ -52,6 +52,7 @@ public class Main {
         }
 
     }
- 
 
+}
+ 
 //based on menu select, menu will reference correct game and run the code

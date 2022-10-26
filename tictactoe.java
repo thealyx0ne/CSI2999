@@ -10,16 +10,19 @@ import java.lang.Math;
 public class TicTacToe {
     public static String xs = "x";
     public static String os = "o";
-    public static int turn = 0; 
-    public static boolean winner;
+    public static int turnNumber = 0; 
+    public static boolean isWinner;
+    public static String winner;
     public static int coin = 0;
     static String[] board;
+    public static String firstTurnPlayer;
+    public static String secondTurnPlayer;
     
     public static void main(String[] args) {
         board = new String[9];
         startup();   
-        while(winner == false){
-            
+        while(isWinner == false){
+            turn();
         }
     }
     
@@ -44,8 +47,6 @@ public class TicTacToe {
                 + "means " + playerTwo + " chooses the other.");
         
         coin = random.nextInt(2-1) + 1;
-        String firstTurnPlayer;
-        String secondTurnPlayer;
         
         if(playerOneChoice == 1){
             firstTurnPlayer = playerOne;
@@ -72,7 +73,15 @@ public class TicTacToe {
     }
     
     static void turn(){
+        System.out.println("");
+        System.out.println("It is turn: " + turnNumber);
+        turnNumber++;
         
+        System.out.println("It is now " + firstTurnPlayer + "'s turn.");
+        player1();
+        
+        System.out.println("It is now " + secondTurnPlayer + "'s turn.");
+        player2();
     }
     
     static boolean winner(){

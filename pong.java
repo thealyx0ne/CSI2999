@@ -1,6 +1,9 @@
 //open gui from menu select
 import java.util.Scanner;
 //import javafx;
+/**
+ * @author Catt McHale
+ */
 
 
 public class Pong {

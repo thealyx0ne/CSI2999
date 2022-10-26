@@ -1,6 +1,9 @@
 
 import java.util.Scanner; //import the Scanner class
 //import javafx; //imports UI for games
+/**
+ * @author Catt McHale
+ */
 
 public class Main {
     public static void main(String[] args){ 

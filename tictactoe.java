@@ -10,20 +10,23 @@ import java.lang.Math;
 public class TicTacToe {
     public static String xs = "x";
     public static String os = "o";
-    public static int turnNumber = 0; 
+    public static int turnNumber = 1; 
     public static boolean isWinner;
     public static String winner;
     public static int coin = 0;
     static String[] board;
     public static String firstTurnPlayer;
     public static String secondTurnPlayer;
+    public static int gridSelect;
     
     public static void main(String[] args) {
         board = new String[9];
         startup();   
         while(isWinner == false){
             turn();
+            turnNumber++;
         }
+        
     }
     
     public static void startup(){
@@ -69,13 +72,12 @@ public class TicTacToe {
         pasteBoard();
         System.out.println("");
         System.out.println("When playing and on your turn, put the number in"
-                + "for the spot you want!");
+                + " for the spot you want!");
     }
     
     static void turn(){
         System.out.println("");
         System.out.println("It is turn: " + turnNumber);
-        turnNumber++;
         
         System.out.println("It is now " + firstTurnPlayer + "'s turn.");
         player1();
@@ -85,15 +87,29 @@ public class TicTacToe {
     }
     
     static boolean winner(){
-        System.out.println("The winner is: ");
+        System.out.println("The winner is: " + winner);
         return true;
     }
     
     static void player1(){
+        //Are the o's
+        boolean confirmO = true;
+        Scanner choiceO = new Scanner(System.in);
+        System.out.println("");
+        System.out.println("Please make your selection on the grid ranging from 1 to 9, " 
+                + firstTurnPlayer + ": ");
+        int tempO = choiceO.nextInt();
         
     }
     
     static void player2(){
+        //Are the x's
+        boolean confirmX = true;
+        Scanner choiceX = new Scanner(System.in);
+        System.out.println("");
+        System.out.println("Please make your selection on the grid ranging from 1 to 9, " 
+                + secondTurnPlayer + ": ");
+        int tempX = choiceX.nextInt();
         
     }
     

@@ -47,16 +47,16 @@ public class TicTacToe {
         String playerTwo = scan.nextLine(); 
         System.out.println("");
         
-        System.out.println(playerOne + ", choose 1 or 2: ");
+        System.out.println(playerOne + ", choose 0 or 1: ");
         int playerOneChoice = scan.nextInt(); 
         System.out.println("");
         
         System.out.println(playerOne + " chose " + playerOneChoice + ", which "
                 + "means " + playerTwo + " chooses the other.");
         
-        coin = random.nextInt(2-1) + 1;
+        coin = random.nextInt(1);
         
-        if(playerOneChoice == 1 && coin == 1){
+        if(playerOneChoice == 0 && coin == 0){
             firstTurnPlayer = playerOne;
             secondTurnPlayer = playerTwo;
         }else{
@@ -104,20 +104,18 @@ public class TicTacToe {
         System.out.println("It is " + firstTurnPlayer + "'s turn.");
         System.out.println("Please make your selection on the grid ranging from "
                 + "1 to 9 that is free, "  + firstTurnPlayer + ": ");
-        int tempO = choiceO.nextInt();
-        if(checkBoard(board, tempO) == true){
+        int tempO = choiceO.nextInt() - 1;
+        if(checkBoard(board, tempO) == true){   
             System.out.println("");
-            System.out.println("You have selected: " + tempO);
             System.out.println("Please pick another option: ");
             player1();
         }else if(checkBoard(board, tempO) == false){
             try{
                 System.out.println("");
-                System.out.println("You have selected: " + tempO);
-                tempO = tempO - 1;
                 board[tempO] = "o";      
             }
-            catch(NumberFormatException | InputMismatchException ex){
+            catch(InputMismatchException e){
+                choiceO.next();
                 System.out.println("");
                 System.out.println("Please enter a number.");
                 player1();
@@ -141,20 +139,18 @@ public class TicTacToe {
         System.out.println("It is " + secondTurnPlayer + "'s turn.");
         System.out.println("Please make your selection on the grid ranging from "
                 + "1 to 9 that is free, "  + secondTurnPlayer + ": ");
-        int tempX = choiceX.nextInt();
+        int tempX = choiceX.nextInt() - 1;
         if(checkBoard(board, tempX) == true){
             System.out.println("");
-            System.out.println("You have selected: " + tempX);
             System.out.println("Please pick another option: ");
             player2();
         }else if(checkBoard(board, tempX) == false){
             try{
                 System.out.println("");
-                System.out.println("You have selected: " + tempX);
-                tempX = tempX - 1;
                 board[tempX] = "x";     
             }
-            catch(NumberFormatException | InputMismatchException ex){
+            catch(InputMismatchException e){
+                choiceX.next();
                 System.out.println("");
                 System.out.println("Please enter a number.");
                 player2();

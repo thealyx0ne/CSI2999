@@ -104,22 +104,21 @@ public class TicTacToe {
         System.out.println("It is " + firstTurnPlayer + "'s turn.");
         System.out.println("Please make your selection on the grid ranging from "
                 + "1 to 9 that is free, "  + firstTurnPlayer + ": ");
-        int tempO = choiceO.nextInt() - 1;
-        if(checkBoard(board, tempO) == true){   
-            System.out.println("");
-            System.out.println("Please pick another option: ");
-            player1();
-        }else if(checkBoard(board, tempO) == false){
-            try{
+        try{
+            int tempO = choiceO.nextInt() - 1;
+            if(checkBoard(board, tempO) == true){   
                 System.out.println("");
-                board[tempO] = "o";      
-            }
-            catch(InputMismatchException e){
-                choiceO.next();
-                System.out.println("");
-                System.out.println("Please enter a number.");
+                System.out.println("Please pick another option: ");
                 player1();
+            }else if(checkBoard(board, tempO) == false){
+                System.out.println("");
+                board[tempO] = "o";             
             }
+        }
+        catch(Exception e){
+            System.out.println("");
+            System.out.println("Please enter a number.");
+            player1();
         }
         boolean won = checkWinner();
         if(won == true){
@@ -139,22 +138,21 @@ public class TicTacToe {
         System.out.println("It is " + secondTurnPlayer + "'s turn.");
         System.out.println("Please make your selection on the grid ranging from "
                 + "1 to 9 that is free, "  + secondTurnPlayer + ": ");
-        int tempX = choiceX.nextInt() - 1;
-        if(checkBoard(board, tempX) == true){
-            System.out.println("");
-            System.out.println("Please pick another option: ");
-            player2();
-        }else if(checkBoard(board, tempX) == false){
-            try{
+        try{
+            int tempX = choiceX.nextInt() - 1;
+            if(checkBoard(board, tempX) == true){   
                 System.out.println("");
-                board[tempX] = "x";     
-            }
-            catch(InputMismatchException e){
-                choiceX.next();
-                System.out.println("");
-                System.out.println("Please enter a number.");
+                System.out.println("Please pick another option: ");
                 player2();
+            }else if(checkBoard(board, tempX) == false){
+                System.out.println("");
+                board[tempX] = "x";             
             }
+        }
+        catch(Exception e){
+            System.out.println("");
+            System.out.println("Please enter a number.");
+            player2();
         }
         boolean won = checkWinner();
         if(won == true){

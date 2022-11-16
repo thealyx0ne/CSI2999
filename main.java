@@ -42,12 +42,12 @@ public class Main {
             System.exit(0);
         //exits
         }
-        else if (user_input != type.int){
+        //else if (user_input != type.int) {
             // throw exception for wrong input type
             // if user enters a non-int for menu choice
-            System.out.println("Invalid input. Please select a value 0-3.");
-            return;
-        }
+           // System.out.println("Invalid input. Please select a value 0-3.");
+            //return;
+        //}
         else {
             //exception for if user enters a number < 3
             System.out.println("Invalid input. Please select a value 0-3.");

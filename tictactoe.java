@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
 package tictactoe;
 
 /**
@@ -5,7 +9,8 @@ package tictactoe;
  * @author Ian Koss
  */
 import java.util.*;
-import java.lang.Math;   
+import java.lang.Math;
+import java.util.Arrays;
 
 public class TicTacToe {
     public static String xs = "x";
@@ -51,7 +56,7 @@ public class TicTacToe {
         
         coin = random.nextInt(2-1) + 1;
         
-        if(playerOneChoice == 1){
+        if(playerOneChoice == 1 && coin == 1){
             firstTurnPlayer = playerOne;
             secondTurnPlayer = playerTwo;
         }else{
@@ -93,23 +98,75 @@ public class TicTacToe {
     
     static void player1(){
         //Are the o's
-        boolean confirmO = true;
         Scanner choiceO = new Scanner(System.in);
+        pasteBoard();
         System.out.println("");
-        System.out.println("Please make your selection on the grid ranging from 1 to 9, " 
-                + firstTurnPlayer + ": ");
+        System.out.println("It is " + firstTurnPlayer + "'s turn.");
+        System.out.println("Please make your selection on the grid ranging from "
+                + "1 to 9 that is free, "  + firstTurnPlayer + ": ");
         int tempO = choiceO.nextInt();
+        if(checkBoard(board, tempO) == true){
+            System.out.println("");
+            System.out.println("You have selected: " + tempO);
+            System.out.println("Please pick another option: ");
+            player1();
+        }else if(checkBoard(board, tempO) == false){
+            try{
+                System.out.println("");
+                System.out.println("You have selected: " + tempO);
+                tempO = tempO - 1;
+                board[tempO] = "o";      
+            }
+            catch(NumberFormatException | InputMismatchException ex){
+                System.out.println("");
+                System.out.println("Please enter a number.");
+                player1();
+            }
+        }
+        boolean won = checkWinner();
+        if(won == true){
+            pasteBoard();
+            System.out.println("");
+            System.out.println("Congratulation " + firstTurnPlayer + ", you won!");
+            System.exit(0);
+        }
         
     }
     
     static void player2(){
         //Are the x's
-        boolean confirmX = true;
         Scanner choiceX = new Scanner(System.in);
+        pasteBoard();
         System.out.println("");
-        System.out.println("Please make your selection on the grid ranging from 1 to 9, " 
-                + secondTurnPlayer + ": ");
+        System.out.println("It is " + secondTurnPlayer + "'s turn.");
+        System.out.println("Please make your selection on the grid ranging from "
+                + "1 to 9 that is free, "  + secondTurnPlayer + ": ");
         int tempX = choiceX.nextInt();
+        if(checkBoard(board, tempX) == true){
+            System.out.println("");
+            System.out.println("You have selected: " + tempX);
+            System.out.println("Please pick another option: ");
+            player2();
+        }else if(checkBoard(board, tempX) == false){
+            try{
+                System.out.println("");
+                System.out.println("You have selected: " + tempX);
+                tempX = tempX - 1;
+                board[tempX] = "x";     
+            }
+            catch(NumberFormatException | InputMismatchException ex){
+                System.out.println("");
+                System.out.println("Please enter a number.");
+                player2();
+            }
+        }
+        boolean won = checkWinner();
+        if(won == true){
+            pasteBoard();
+            System.out.println("");
+            System.out.println("Congratulation " + secondTurnPlayer + ", you won!");
+            System.exit(0);
+        }
         
     }
     
@@ -127,5 +184,13 @@ public class TicTacToe {
                            + board[7] + " | " + board[8]
                            + " |");
         System.out.println("|---|---|---|");
+    }
+    
+    static boolean checkBoard(String[] boardChange, int selection){
+        return "o".equals(board[selection]) || "x".equals(board[selection]);
+    }
+    
+    static boolean checkWinner(){
+        return false;
     }
 }

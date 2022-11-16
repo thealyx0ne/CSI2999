@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author Catt McHale
  */
 
- class Player {
+ class Pong {
     //current position
     PVector position;
     //movement direction

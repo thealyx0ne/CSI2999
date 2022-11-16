@@ -1,5 +1,6 @@
 
 import java.util.Scanner; //import the Scanner class
+
 //import javafx; //imports UI for games
 /**
  * @author Catt McHale
@@ -29,11 +30,13 @@ public class Main {
         } 
         else if (user_input == 1) {
             System.out.println("Loading Pong...");
+            
             //forward user to pong
             
         } 
         else if (user_input == 2) {
             System.out.println("Loading Tic Tac Toe...");
+            TicTacToe();
             //forward user to tictactoe
             
         } 

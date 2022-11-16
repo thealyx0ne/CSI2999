@@ -117,7 +117,7 @@ public class TicTacToe {
                 tempO = tempO - 1;
                 board[tempO] = "o";      
             }
-            catch(NumberFormatException ex){
+            catch(NumberFormatException | InputMismatchException ex){
                 System.out.println("");
                 System.out.println("Please enter a number.");
                 player1();
@@ -154,7 +154,7 @@ public class TicTacToe {
                 tempX = tempX - 1;
                 board[tempX] = "x";     
             }
-            catch(NumberFormatException ex){
+            catch(NumberFormatException | InputMismatchException ex){
                 System.out.println("");
                 System.out.println("Please enter a number.");
                 player2();
@@ -187,10 +187,7 @@ public class TicTacToe {
     }
     
     static boolean checkBoard(String[] boardChange, int selection){
-        if(board[selection] != "o" && board[selection] != "x"){
-            return false;
-        }
-        return true;
+        return "o".equals(board[selection]) || "x".equals(board[selection]);
     }
     
     static boolean checkWinner(){

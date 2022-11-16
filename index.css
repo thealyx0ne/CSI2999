@@ -1,0 +1,69 @@
+html {
+	background-color: purple;
+	line-height: 2;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+.name {
+	color: blue;
+	font-size: 45px;
+	box-sizing: border-box;
+	border-style: inset;
+	border-color: white;
+	font-family: monospace;
+	position: inline;
+	margin: 20px;
+	padding-left: 600px;
+}
+.logo-mashup {
+	text-align: center;
+}
+.logo {
+	display: flex;
+	position: relative;
+	right: -1000px;
+}
+.menu {
+	border: 10px;
+	size: 20px;
+	display: flexbox;
+	border-style: line;
+	position: absolute;
+	right: 44%;
+}
+.menu a:hover {
+	background-color: blue;
+	border-radius: 5px;
+	border-width: 3px;
+	transition: 0s;
+}
+a {
+	align-self: center;
+	color: white;
+	list-style: none;
+	text-decoration: none;
+	font-size: 25px;
+	border-style: ridge;
+	border-width: 1px;
+	border-radius: 2px;
+	padding: 3px;
+	margin: 8px;
+}
+.instructions {
+	font-size: x-large;
+	position: relative;
+	font-style: italic;
+}
+.link {
+	font-style: none;
+	border: none;
+}
+.us {
+	display: block;
+}

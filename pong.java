@@ -13,6 +13,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.TextField;
 
+
+
+
+
+
 public class PVector {
     float x;
     float y;
@@ -21,14 +26,16 @@ public class PVector {
         x = x2;
         y = y2;
     }
-}
+
+    PVector position;
 //import javafx;
-/**
- * @author Catt McHale
- */
+
+    /**
+     * @author Catt McHale
+     */
     public class Player {
         //current position
-        PVector position;
+        PVector x;
         //movement direction
         float yDirection;
         //size
@@ -71,14 +78,17 @@ public class PVector {
                 //stop movement at the bottom of the screen
                 position.y = height - boundary - height;
             }
-
-            //set player paddle color to white
-            Rectangle2D.Float rect = new Rectangle2D.Float(position.x, position.y, width, height);
-            fill(255);
-            //draw rectangle (paddle)
-            rect(position.x, position.y, width, height);
-
         }
+
+        //set player paddle color to white
+        public abstract class Rectangle2D {
+            Rectangle2D rect = new Rectangle2D(position.x, position.y, width, height);
+            //rect = fill(255);
+
+            //draw rectangle (paddle)
+            //rect(position.x, position.y, width, height);
+        }
+
     }
 
     public class Ball {
@@ -108,9 +118,9 @@ public class PVector {
         //reset ball position and randomize the direction
         public void resetMovement() {
             //set position to center of screen
-            float x = width/2;
-            float y = height/2;
-            position = new PVector(x,y);
+            float x = width / 2;
+            float y = height / 2;
+            position = new PVector(x, y);
 
             //get random speed
             //speed = ???
@@ -152,7 +162,7 @@ public class PVector {
 
             //calculate the radius
             var d = ball.diameter;
-            var r = d/2;
+            var r = d / 2;
 
             //loop eight points
             for (int i = 0; i < 8; i++) {
@@ -271,5 +281,8 @@ public class PVector {
                 Player1.setDirection(speed);
             //add ability for two player game? player1 uses wasd and player2 uses arrow keys
         }
+    }
 }
+
+
 

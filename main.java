@@ -8,7 +8,7 @@ import java.util.Scanner; //import the Scanner class
 
 public class Main {
     public static void main(String[] args){ 
-        String[] menu = {"0: Frogger", "1: Pong", "2: Tic Tac Toe", "3: Quit"}; //menu array for user selection
+        String[] menu = {"0: Frogger", "1: Math", "2: Tic Tac Toe", "3: Quit"}; //menu array for user selection
         System.out.println(menu[0]);
         System.out.println(menu[1]);
         System.out.println(menu[2]);
@@ -29,9 +29,14 @@ public class Main {
            
         } 
         else if (user_input == 1) {
-            System.out.println("Loading Pong...");
+            System.out.println("Loading Math...");
+            for (int count = 0; count < 10; count++) {
+                question q1 = new question();
+                q1.askquestion();
+                q1.check();
             
-            //forward user to pong
+            
+            //forward user to math
             
         } 
         else if (user_input == 2) {

@@ -1,8 +1,27 @@
 package pong;
 //open gui from menu select
+import java.awt.geom.Rectangle2D;
 import java.util.Scanner;
-import java.util.random;
-import math.*;
+import java.util.*;
+import java.lang.Math;
+import java.lang.Object;
+import java.awt.geom.Rectangle2D.Float;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.TextField;
+
+public class PVector {
+    float x;
+    float y;
+
+    PVector(float x2, float y2) {
+        x = x2;
+        y = y2;
+    }
+}
 //import javafx;
 /**
  * @author Catt McHale
@@ -54,6 +73,7 @@ import math.*;
             }
 
             //set player paddle color to white
+            Rectangle2D.Float rect = new Rectangle2D.Float(position.x, position.y, width, height);
             fill(255);
             //draw rectangle (paddle)
             rect(position.x, position.y, width, height);
@@ -88,10 +108,12 @@ import math.*;
         //reset ball position and randomize the direction
         public void resetMovement() {
             //set position to center of screen
-            position = new PVector(width / 2, hieght / 2);
+            float x = width/2;
+            float y = height/2;
+            position = new PVector(x,y);
 
             //get random speed
-            float speed = random(-s, s);
+            //speed = ???
             //set y direction to half speed to make it move faster
             direction = new PVector(speed, speed / 2);
         }
@@ -114,14 +136,14 @@ import math.*;
             }
 
             //set the ball fill color to white
-            fill(255);
+            ball.fill(255);
             //draw the ball's circle
-            circle(position.x, position.y, d);
+            Circle.draw(position.x, position.y, diameter);
 
         }
 
         //collision methods
-        public boolean overlapsWith(Player1 player) {
+        public boolean overlapsWith(Player player) {
             //player getter method
             //get player position, width, and height
             var position = player.getPosition();
@@ -129,20 +151,21 @@ import math.*;
             var height = player.getHeight();
 
             //calculate the radius
-            var r = d / 2;
+            var d = ball.diameter;
+            var r = d/2;
 
             //loop eight points
             for (int i = 0; i < 8; i++) {
                 //convert i * 45 degree to radians
-                var degree = (i * 45) * (Pi / 180);
+                var degree = (i * 45) * (3.14159 / 180);
 
                 //calculate x and y points by rotating a vector
                 //relative to the position 45 degrees
-                var x = r * cos(position.x + degree) + position.x;
-                var y = r * sin(position.y + degree) + position.y;
+                var x = r * Math.cos(position.x + degree) + position.x;
+                var y = r * Math.sin(position.y + degree) + position.y;
 
                 //return true if the point is within both the x and y axis
-                if (position.x < x && x < position.x + width && p.y < y && y < p.y + height) return true;
+                if (position.x < x && x < position.x + width && player.y < y && y < player.y + height) return true;
                 else
                     //if none of the points were within the player
                     return false;
@@ -151,11 +174,13 @@ import math.*;
         }
 
         //define movement speed
-        float speed = 3;
+        float movespeed = 3;
         //define player scores
         float Player1Score = 0;
         float Player2Score = 0;
         //define player variables
+        float width = 10;
+        float height = 10;
         Player Player1;
         Player Player2;
         //define ball variable
@@ -167,8 +192,8 @@ import math.*;
             size(500, 500); //set screen size
 
             //create player instances
-            Player1 = new Player(10, height / 2, 0);
-            Player2 = new player(width - 20, height / 2, 0);
+            Player Player1 = new Player(10, height / 2, 0);
+            Player Player2 = new Player(width - 20, height / 2, 0);
 
             //create ball instance
             ball = new Ball();
@@ -226,27 +251,25 @@ import math.*;
                 //add speed
                 directionToBallY *= speed;
                 //set player2 direction
-                Player2.setDeriection(directionToBallY);
+                Player2.setDirection(directionToBallY);
             }
 
             //store the ball x position the next check
-            lastballPositionX = ballPosition.x;
+            lastBallPositionX = ballPosition.x;
 
             //set fill color to white
-            fill(255);
-            //draw the player score on each side
-            text("Player 1 Score: " + Player1Score, 10, 20);
-            text("Player 2 Score: " + Player2Score, width - 80, 20);
+            ball.fill(255);
         }
 
         //key press events for player movement
         public void keyPressed() {
+            //Scanner keyPressed = new Scanner();
             //move up
-            if (key == 'w') //possibly make so player can use both wasd and arrow keys
+            if (keyPressed == 'w') //possibly make so player can use both wasd and arrow keys
                 Player1.setDirection(-speed);
-            else if (key == 's')
+            else if (keyPressed == 's')
                 Player1.setDirection(speed);
             //add ability for two player game? player1 uses wasd and player2 uses arrow keys
         }
-    }
 }
+

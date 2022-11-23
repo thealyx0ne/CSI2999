@@ -124,7 +124,7 @@ public class TicTacToe {
         if(won == true){
             pasteBoard();
             System.out.println("");
-            System.out.println("Congratulation " + firstTurnPlayer + ", you won!");
+            System.out.println("Congratulations " + firstTurnPlayer + ", you won!");
             System.exit(0);
         }
         

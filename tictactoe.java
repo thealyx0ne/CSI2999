@@ -220,13 +220,13 @@ public class TicTacToe {
             }
             //For X winner
             if (line.equals("xxx")) {
-                winner = firstTurnPlayer;
+                winner = secondTurnPlayer;
                 return true;
             }
              
             // For O winner
             else if (line.equals("ooo")) {
-                winner = secondTurnPlayer;
+                winner = firstTurnPlayer;
                 return true;
             }   
         }

@@ -13,6 +13,7 @@ import java.lang.Math;
 import java.util.Arrays;
 
 public class TicTacToe {
+    //Initialization of all variables
     public static String xs = "x";
     public static String os = "o";
     public static int turnNumber = 1; 
@@ -24,6 +25,7 @@ public class TicTacToe {
     public static String secondTurnPlayer;
     public static int gridSelect;
     
+    //Calls the methods for the game loop, creates board variable
     public static void main(String[] args) {
         board = new String[9];
         startup();   
@@ -34,6 +36,7 @@ public class TicTacToe {
         
     }
     
+    //The non-looped process starting up the game.
     public static void startup(){
         Random random = new Random();
         Scanner scan = new Scanner(System.in); 
@@ -80,6 +83,7 @@ public class TicTacToe {
                 + " for the spot you want!");
     }
     
+    //Will start each players turn
     static void turn(){
         System.out.println("");
         System.out.println("It is turn: " + turnNumber);
@@ -91,11 +95,7 @@ public class TicTacToe {
         player2();
     }
     
-    static boolean winner(){
-        System.out.println("The winner is: " + winner);
-        return true;
-    }
-    
+    //Player 1's entire turn of choice
     static void player1(){
         //Are the o's
         Scanner choiceO = new Scanner(System.in);
@@ -124,12 +124,13 @@ public class TicTacToe {
         if(won == true){
             pasteBoard();
             System.out.println("");
-            System.out.println("Congratulations " + firstTurnPlayer + ", you won!");
+            System.out.println("Congratulation " + firstTurnPlayer + ", you won!");
             System.exit(0);
         }
         
     }
     
+    //Player 2's entire turn of choice
     static void player2(){
         //Are the x's
         Scanner choiceX = new Scanner(System.in);
@@ -156,6 +157,7 @@ public class TicTacToe {
         }
         boolean won = checkWinner();
         if(won == true){
+            isWinner = true;
             pasteBoard();
             System.out.println("");
             System.out.println("Congratulation " + secondTurnPlayer + ", you won!");
@@ -164,6 +166,7 @@ public class TicTacToe {
         
     }
     
+    //Simply creates the board whenever called with any changes.
     static void pasteBoard(){
         System.out.println("|---|---|---|");
         System.out.println("| " + board[0] + " | "
@@ -184,6 +187,7 @@ public class TicTacToe {
         return "o".equals(board[selection]) || "x".equals(board[selection]);
     }
     
+    //Looks at each line seeing if there is a winner with x's or o's
     static boolean checkWinner(){
         for (int a = 0; a < 8; a++) {
             String line = null;

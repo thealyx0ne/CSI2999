@@ -1,4 +1,4 @@
-package games; //backup game :)
+package games;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.*;

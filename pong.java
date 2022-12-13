@@ -1,5 +1,4 @@
-package games;
-//open gui from menu select
+
 import java.awt.geom.Rectangle2D;
 import java.util.Scanner;
 import java.util.*;
@@ -14,7 +13,7 @@ import javax.swing.JPanel;
 import java.awt.TextField;
 
 /**
- * @author Catt McHale
+ *
  */
 
 public class pong {

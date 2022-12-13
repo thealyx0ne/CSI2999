@@ -1,4 +1,4 @@
-
+package games;
 //the necessary imports for the frogger game
 
 import javafx.scene.Scene;
@@ -6,6 +6,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+
+
 import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;

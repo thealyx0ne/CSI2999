@@ -1,4 +1,4 @@
-package pong;
+package games;
 //open gui from menu select
 import java.awt.geom.Rectangle2D;
 import java.util.Scanner;
@@ -13,26 +13,21 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.TextField;
 
-
 /**
  * @author Catt McHale
  */
 
-
-public class PVector {
-    float x;
-    float y;
-
-    PVector(float x2, float y2) {
-        x = x2;
-        y = y2;
-    }
-
-    PVector position;
-//import javafx;
-
+public class pong {
     public static void main(String[] args) {
 
+        private PVector(float x, float y) {
+            PVector(float x2, float y2) {
+                x = x2;
+                y = y2;
+            }
+
+            PVector position;
+        }
     }
         public class Player {
             //current position
@@ -95,23 +90,18 @@ public class PVector {
         public class Ball {
             //current position of ball
             PVector position;
-
             //direction of ball
             PVector direction;
-
             //diameter of ball
             float diameter = 15;
-
             //ball speed
             float speed = 5;
-
 
             public Ball() {
                 resetMovement();
             }
 
             //Getter
-
             public PVector getPosition() {
                 return position;
             }
@@ -122,7 +112,6 @@ public class PVector {
                 float x = width / 2;
                 float y = height / 2;
                 position = new PVector(x, y);
-
                 //get random speed
                 //speed = ???
                 //set y direction to half speed to make it move faster
@@ -274,7 +263,7 @@ public class PVector {
 
             //key press events for player movement
             public void keyPressed() {
-                //Scanner keyPressed = new Scanner();
+                Scanner keyPressed = new Scanner();
                 //move up
                 if (keyPressed == 'w') //possibly make so player can use both wasd and arrow keys
                     Player1.setDirection(-speed);
@@ -284,6 +273,5 @@ public class PVector {
             }
         }
     }
-
 
 

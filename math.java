@@ -1,4 +1,4 @@
-package math; //backup game :)
+package games; //backup game :)
 import java.util.Random;
 import java.util.Scanner;
 import java.util.*;
@@ -25,6 +25,7 @@ public class Math { //create Math class and initialize variables
             }
         } catch (InputMismatchException ex) { //mismatch error if input type != int
             System.out.println("Please enter an integer for your answer.");
+            //return;
         }
     }
         private Math() { //generate random integers 1-10
@@ -32,7 +33,7 @@ public class Math { //create Math class and initialize variables
             b =random.nextInt(10);
         }
 
-        public void askquestion () {
+        public void askquestion() {
             if (a > b) { //ensure no negative numbers for subtraction
                 System.out.println("What is " + a + " - " + b + "?");
                 correct = a - b;
